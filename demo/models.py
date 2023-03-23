@@ -19,3 +19,21 @@ class Demo(models.Model):
             self.week_number = self.start_date.isocalendar()[1]
         super().save(*args, **kwargs)
 
+
+class Invoice(models.Model):
+    invoice_no = models.CharField(max_length= 7, unique= True)
+    customer_id= models.CharField(max_length= 7, unique= False)
+    gender= models.CharField(max_length= 10)
+    age= models.IntegerField(max_length=3)
+    category = models.CharField(max_length=25)
+    quantity = models.IntegerField(max_length=1000)
+    price = models.FloatField()
+    payment_method= models.CharField(max_length= 25)
+    invoice_date= models.DateField()
+    shopping_mall= models.CharField(max_length=25)
+
+
+    def __str__(self):
+        return self.invoice_no
+
+
