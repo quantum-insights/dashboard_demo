@@ -3,10 +3,17 @@ from demo.models import Demo
 import pandas as pd
 from plotly.offline import plot
 import plotly.express as px
-
+from demo.load_invoice import DataLoader
 # Create your views here.
 
 def index(request):
+
+    try:
+        dl= DataLoader()
+        dl.load_data()
+    except Exception as e:
+        print(e)
+
     qs= Demo.objects.all()
     demo_data= [
         {
