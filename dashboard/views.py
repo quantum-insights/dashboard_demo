@@ -42,6 +42,7 @@ def index(request):
     line_plot= plot(fig_line, output_type= 'div')
     pie_plot= plot(fig_pie, output_type= 'div')
     context = {
+        'text': 'some random text from plotly',
         'line_div': line_plot,
         'pie_div': pie_plot,
     }

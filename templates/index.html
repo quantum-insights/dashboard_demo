@@ -1,12 +1,35 @@
 {% extends 'base.html' %}
 
 {% block content %}
-    <h1>Here should be a plot!</h1>
+    <h1>Welcome to my demo Dashboard</h1>
+    <p>On this little website I would like to showcase how a custom build dashboard could look like.</p>
 
+    {{text}}
+
+
+
+    <!-- Autoescape is needed to show the diagrams -->
     {% autoescape off %}
+
+
+    <div class="container">
+        <div class="row">
+            <div class="col">
+                {{ line_div }}
+            </div>
+        </div>
+        <div class="row">
+            <div class="col">
+                {{ pie_div }}
+            </div>
+        </div>
+    </div>
+    {% endautoescape %}
+
+    <!-- {% autoescape off %}
     {{ line_div }}
     <br>
     {{ pie_div }}
     {% endautoescape %}
-    <p>Here it should have finished.</p>
+    <p>Here it should have finished.</p> -->
 {% endblock content %}
